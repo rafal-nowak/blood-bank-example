@@ -2,6 +2,8 @@ package com.amigoscode.bbexample.api.handler;
 
 
 import com.amigoscode.bbexample.api.response.ErrorResponse;
+import com.amigoscode.bbexample.domain.provider.ProviderAlreadyExistsException;
+import com.amigoscode.bbexample.domain.provider.ProviderNotFoundException;
 import com.amigoscode.bbexample.domain.user.UserAlreadyExistsException;
 import com.amigoscode.bbexample.domain.user.UserNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -22,6 +24,16 @@ class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(UserAlreadyExistsException.class)
     public final ResponseEntity<ErrorResponse> handleUserAlreadyExistsException(UserAlreadyExistsException ex) {
+        return buildResponse(ex, HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(ProviderNotFoundException.class)
+    public final ResponseEntity<ErrorResponse> handleProviderNotFoundException(ProviderNotFoundException ex) {
+        return buildResponse(ex,  HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(ProviderAlreadyExistsException.class)
+    public final ResponseEntity<ErrorResponse> handleProviderAlreadyExistsException(ProviderAlreadyExistsException ex) {
         return buildResponse(ex, HttpStatus.CONFLICT);
     }
 
