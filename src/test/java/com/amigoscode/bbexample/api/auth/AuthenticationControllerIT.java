@@ -90,7 +90,7 @@ class AuthenticationControllerIT extends BaseIT {
     }
 
     @Test
-    void user_should_get_response_code_not_found_when_password_is_incorrect() {
+    void user_should_get_response_code_forbidden_when_password_is_incorrect() {
         //given
 
         User user1 = TestUserFactory.createTechnologist();
@@ -106,6 +106,6 @@ class AuthenticationControllerIT extends BaseIT {
                 ErrorResponse.class);
 
         //then
-        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+        assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
     }
 }

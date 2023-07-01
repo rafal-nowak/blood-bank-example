@@ -65,7 +65,7 @@ public class BaseIT {
             null,
             "admin@gmail.com",
             "John",
-            passwordEncoder.encode("password"),
+            "password",
             UserRole.ADMIN,
             ZonedDateTime.of(
             2023,
@@ -82,7 +82,7 @@ public class BaseIT {
             null,
             "technologist@gmail.com",
             "John",
-            passwordEncoder.encode("password"),
+            "password",
             UserRole.TECHNOLOGIST,
             ZonedDateTime.of(
                     2023,
@@ -99,7 +99,7 @@ public class BaseIT {
             null,
             "md@gmail.com",
             "John",
-            passwordEncoder.encode("password"),
+            "password",
             UserRole.MEDICAL_DOCTOR,
             ZonedDateTime.of(
                     2023,
