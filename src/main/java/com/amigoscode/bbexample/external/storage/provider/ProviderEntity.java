@@ -1,5 +1,6 @@
 package com.amigoscode.bbexample.external.storage.provider;
 
+import com.amigoscode.bbexample.external.storage.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
