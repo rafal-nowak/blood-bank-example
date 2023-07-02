@@ -8,5 +8,6 @@ create table provider_entity
     email      varchar(255)                not null,
     name       varchar(255)                not null,
     primary key (id),
-    constraint provider_email_unique unique (email)
+    constraint provider_email_unique unique (email),
+    constraint fk_user foreign key (created_by) references user_entity(id)
 );
