@@ -7,6 +7,7 @@ import com.amigoscode.bbexample.domain.user.UserRole;
 import com.amigoscode.bbexample.domain.user.UserService;
 import lombok.extern.java.Log;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.time.ZonedDateTime;
@@ -14,6 +15,7 @@ import java.time.ZonedDateTime;
 import static java.security.Security.addProvider;
 
 @Component
+@Order(2)
 @Log
 public class DefaultProviders implements CommandLineRunner {
 
